@@ -5,16 +5,39 @@ import { useState } from "preact/hooks";
 
 moment.locale("fr");
 
+const Events = [
+    {
+        label: "Fin du confinement",
+        hour: "16h20",
+        date: "2020-05-11"
+    },
+    {
+        label: "Fumer tu tar",
+        hour: "16h40",
+        date: "2020-05-11"
+    }
+];
+
 const Calendar: FunctionalComponent = () => {
     const weekDays = moment.weekdaysShort();
 
-    const listOfWeekDays = weekDays.map(day => (
-        <div style={{ flex: "1 1 0px", textAlign: "center" }}>{day}</div>
+    const listOfWeekDays = weekDays.map((day, i) => (
+        <div style={{
+            flex: "1 1 0px",
+            borderRight: i !== 6 ? "solid 2px #91AFFF" : "none",
+            height: "130px",
+            "fontSize": "26px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            {day}
+        </div>
     ));
 
     const today = moment();
 
-    const [selectedMonth, setSelectedMonth] = useState({ date: moment() });
+    const [selectedMonth, setSelectedMonth] = useState({date: moment()});
 
     const blanks = [];
 
@@ -26,7 +49,7 @@ const Calendar: FunctionalComponent = () => {
 
     for (let i = 0; i < Number(getStartOfMonth()); i++) {
         blanks.push(
-            <div style={{ flex: "1 1 0px" }} className="calendar-day empty">
+            <div style={{flex: "1 1 0px", borderRight: "solid 2px #91AFFF"}} className="calendar-day empty">
                 {""}
             </div>
         );
@@ -36,11 +59,37 @@ const Calendar: FunctionalComponent = () => {
     for (let d = 1; d <= selectedMonth.date.daysInMonth(); d++) {
         daysInMonth.push(
             <div
-                style={{ flex: "1 1 0px", textAlign: "center" }}
+                style={{
+                    flex: "1 1 0px",
+                    borderRight: (Number(getStartOfMonth()) + d) % 7 !== 0 ? "solid 2px #91AFFF" : "none",
+                    height: "130px"
+                }}
                 key={d}
                 className="calendar-day"
             >
-                {d}
+                <div style={{"height": "auto", "paddingTop": "20px", "fontSize": "26px"}}>
+                    <div
+                        style={d === Number(today.format("D")) && today.format("M GGGG") === selectedMonth.date.format("M GGGG") ? {
+                            "backgroundColor": "#FF1053",
+                            "border": "10px solid #FF1053",
+                            "borderRadius": "50%",
+                            "width": "50px",
+                            "height": "50px",
+                            "display": "flex",
+                            "justifyContent": "center",
+                            "alignItems": "center",
+                            "color": "#F6F9FC",
+                            marginLeft: "20px"
+                        } : {marginLeft: "20px"}}>
+                        {d === 4 ? "" : d}
+                    </div>
+                    {
+                        Events.map((evt) => {
+                            if (moment(evt.date).format("M GGGG") === selectedMonth.date.format("M GGGG") && Number(moment(evt.date).format("D")) === d)
+                                return (<div style={{display: "flex", color: "white", backgroundColor: "#6689E6", "fontSize":"20px","padding":"3px", marginTop: "3px"}}>{evt.hour} - {evt.label}</div>)
+                        })
+                    }
+                </div>
             </div>
         );
     }
@@ -70,7 +119,8 @@ const Calendar: FunctionalComponent = () => {
             missingCells--
         ) {
             rows[rows.length - 1].push(
-                <div style={{ flex: "1 1 0px" }} className="calendar-day empty">
+                <div style={{flex: "1 1 0px", borderRight: missingCells !== 1 ? "solid 2px #91AFFF" : "none"}}
+                     className="calendar-day empty">
                     {""}
                 </div>
             );
@@ -78,14 +128,15 @@ const Calendar: FunctionalComponent = () => {
     }
 
     const daysinmonth = rows.map((d, i) => {
+        if (i === 0) return;
         return (
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
                 {d}
             </div>
         );
     });
 
-    console.log(selectedMonth);
+    console.log(rows);
 
     return (
         <div
@@ -95,32 +146,34 @@ const Calendar: FunctionalComponent = () => {
                 flexDirection: "column"
             }}
         >
-            <div style={{ display: "flex" }}>
-                <div
-                    style={{ flex: "1 1 0px", textAlign: "center" }}
-                    onClick={() => {
-                        setSelectedMonth({
-                            date: selectedMonth.date.subtract(1, "month")
-                        });
-                    }}
-                >
-                    {"<"}
-                </div>
-                <div style={{ flex: "1 1 0px", textAlign: "center" }}>
-                    {selectedMonth.date.format("MMMM gggg")}
-                </div>
-                <div
-                    style={{ flex: "1 1 0px", textAlign: "center" }}
-                    onClick={() => {
-                        setSelectedMonth({
-                            date: selectedMonth.date.add(1, "month")
-                        });
-                    }}
-                >
-                    {">"}
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <div style={{"alignItems":"center","display":"flex","width":"25%","justifyContent":"space-around", color: "#91AFFF", fontSize: "30px"}}>
+                    <div
+                        style={{textAlign: "center", cursor: "pointer"}}
+                        onClick={() => {
+                            setSelectedMonth({
+                                date: selectedMonth.date.subtract(1, "month")
+                            });
+                        }}
+                    >
+                        {"<"}
+                    </div>
+                    <div style={{textAlign: "center", textTransform: "capitalize"}}>
+                        {selectedMonth.date.format("MMMM")}
+                    </div>
+                    <div
+                        style={{textAlign: "center", cursor: "pointer"}}
+                        onClick={() => {
+                            setSelectedMonth({
+                                date: selectedMonth.date.add(1, "month")
+                            });
+                        }}
+                    >
+                        {">"}
+                    </div>
                 </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
                 {listOfWeekDays}
             </div>
             <div>{daysinmonth}</div>
