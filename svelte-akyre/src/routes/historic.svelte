@@ -33,7 +33,14 @@
 
 <style>
     .all-historic {
-        padding: 50px 250px 50px 50px;
+        padding: 50px;
+    }
+
+    h1 {
+        color: #91AFFF;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-size: 61px;
     }
 </style>
 
@@ -41,9 +48,9 @@
 	<title>Histoy</title>
 </svelte:head>
 
-<h1>Historic</h1>
 
 <div class="all-historic">
+    <h1>Historic</h1>
     {#each allHistories as history}
         <AnHistory history={history}/>
     {/each}

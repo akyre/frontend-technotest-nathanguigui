@@ -23,8 +23,8 @@
         -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
-        margin: 50px;
-        width: 65%;
+        margin: 50px 0;
+        width: 80%;
     }
 
     .blue-box {
@@ -32,7 +32,7 @@
         border-radius: 5px;
         padding: 10px;
         display: flex;
-        margin: 0 20px 20px 20px;
+        margin: 20px;
         color: #F3F3F3;
         -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
@@ -42,7 +42,7 @@
     .history-video {
         outline: none;
         border-radius: 5px;
-        margin: 0 20px 20px 20px;
+        margin: 20px;
         -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
@@ -111,10 +111,6 @@
 
 </style>
 
-<svelte:head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</svelte:head>
-
 <div class="history">
     <div class="left">
         <div class="blue-box">
@@ -124,7 +120,7 @@
                     <div style="display: flex; margin-top: 5px;"><div class="robotoThinItalic TwentyFiveSize">{history.date}</div> <div style="margin-left: 6px" class="robotoMediumItalic TwentyFiveSize"> - {history.hour}</div></div>
                 </div>
                 <div class="insight-ctn">
-                    <div>
+                    <div title="{history.note.mean}">
                         {#each arrOfStar as currStar}
                             <span class="{currStar.className}"></span>
                         {/each}
