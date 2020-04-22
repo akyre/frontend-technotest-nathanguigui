@@ -1,5 +1,6 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+	import HomeNav from "../components/HomeNav.svelte"
 	import DashBoardTopBar from "../components/DashBoardTopBar.svelte"
 	const currentUser = {
 		first_name: "Richard",
@@ -17,14 +18,21 @@
 
 <svelte:head>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
 </svelte:head>
 
 
-
-<div class="all-container">
-	<Nav {segment}/>
-	<div>
-		<DashBoardTopBar currentUser="{currentUser}"/>
-		<slot></slot>
-	</div>
-</div>
+	{#if !segment}
+		<div style="display: flex; flex-direction: column">
+			<HomeNav/>
+			<slot></slot>
+		</div>
+	{:else}
+		<div class="all-container">
+			<Nav {segment}/>
+			<div style="width: 100%">
+				<DashBoardTopBar currentUser="{currentUser}"/>
+				<slot></slot>
+			</div>
+		</div>
+	{/if}
