@@ -1,5 +1,7 @@
 <script>
     import ProductPresentation from "../components/ProductPresentation.svelte"
+    import Testimony from "../components/Testimony.svelte";
+    import HomeFooter from "../components/HomeFooter.svelte";
 
     const presentations = [{
         name: "Code review",
@@ -9,7 +11,7 @@
         image: "https://picsum.photos/800",
         orientation: "left",
         color: "#FF1053"
-    },{
+    }, {
         name: "Code analytics",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo consequat velit, sit amet consectetur lectus varius non. Phasellus semper risus et eros faucibus commodo. Maecenas efficitur nunc vitae sagittis hendrerit. Sed sed ante vehicula, accumsan est quis, aliquam tortor. Sed consequat euismod erat, ut molestie erat blandit at. Vestibulum luctus efficitur diam a rutrum. Integer sit amet viverra justo, et aliquet mauris. Cras faucibus ante vitae mattis congue. Ut eget viverra sapien. Nullam non varius neque. Nunc condimentum laoreet lorem, et commodo eros laoreet et. Curabitur lacinia quis ligula ut pellentesque. Donec bibendum arcu urna, eu porta nisl tincidunt sit amet.",
         link: "https://google.com",
@@ -17,7 +19,7 @@
         image: "https://picsum.photos/800",
         orientation: "right",
         color: "#73C1C6"
-    },{
+    }, {
         name: "Code review",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam commodo consequat velit, sit amet consectetur lectus varius non. Phasellus semper risus et eros faucibus commodo. Maecenas efficitur nunc vitae sagittis hendrerit. Sed sed ante vehicula, accumsan est quis, aliquam tortor. Sed consequat euismod erat, ut molestie erat blandit at. Vestibulum luctus efficitur diam a rutrum. Integer sit amet viverra justo, et aliquet mauris. Cras faucibus ante vitae mattis congue. Ut eget viverra sapien. Nullam non varius neque. Nunc condimentum laoreet lorem, et commodo eros laoreet et. Curabitur lacinia quis ligula ut pellentesque. Donec bibendum arcu urna, eu porta nisl tincidunt sit amet.",
         link: "https://google.com",
@@ -150,7 +152,9 @@
         <ProductPresentation presentation={pres}/>
     {/each}
 
+    <Testimony/>
 
+    <HomeFooter/>
 
 </div>
 
