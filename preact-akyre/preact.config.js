@@ -1,4 +1,6 @@
 import { resolve } from "path";
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+
 
 export default {
     /**
@@ -23,6 +25,8 @@ export default {
                 silent: true
             });
         });
+
+        config.plugins.push( new CopyWebpackPlugin([{ context: `${__dirname}/src/assets`, from: `*.*` }]) );
 
         config.resolve.alias["moment$"] = resolve(
             process.cwd(),

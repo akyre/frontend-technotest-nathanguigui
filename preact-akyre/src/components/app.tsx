@@ -6,6 +6,7 @@ import Profile from "../routes/profile";
 import NotFoundPage from "../routes/notfound";
 import Header from "./header";
 import Calendar from "../routes/calendar";
+import ExpertList from "../routes/expertList";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 if ((module as any).hot) {
@@ -21,12 +22,14 @@ const App: FunctionalComponent = () => {
 
     return (
         <div id="app">
-            <Header />
+            {
+                // @ts-ignore
+                currentUrl && <Header />
+            }
             <Router onChange={handleRoute}>
                 <Route path="/" component={Home} />
-                <Route path="/profile/" component={Profile} user="me" />
                 <Route path="/calendar/" component={Calendar} />
-                <Route path="/profile/:user" component={Profile} />
+                <Route path="/experts/" component={ExpertList} />
                 <NotFoundPage default />
             </Router>
         </div>

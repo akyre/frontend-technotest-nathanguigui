@@ -1,0 +1,46 @@
+.expert-component-container {
+    width: 300px;
+    height: 300px;
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 300px;
+    max-width: 300px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: center;
+}
+
+.expert-component-top {
+    color: #FDFDF6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #262525;
+    display: flex;
+    opacity: .6;
+    padding: 15px;
+    min-height: 25%;
+    align-items: center;
+}
+
+.expert-component-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    background-color: #262525;
+    opacity: .6;
+    color: #FDFDF6;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 25%;
+}
+
+.expert-component-bottom-left {
+    display: flex;
+    flex-direction: column;
+    flex: 9 1 0px;
+}

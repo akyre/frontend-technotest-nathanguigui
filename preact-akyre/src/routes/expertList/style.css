@@ -1,0 +1,11 @@
+.expert-list-container {
+    padding: 20px 0;
+}
+
+.expert-list-title {
+    margin: 40px 0 0 50px;
+    color: #91AFFF;
+    font-size: 8vmin;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}

@@ -1,5 +1,91 @@
-.home {
-    padding: 56px 20px;
-    min-height: 100%;
+
+.head-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+}
+
+.section-2 {
+    margin: 125px;
+    font-size: 35px;
+    text-align: center;
+    color: #91AFFF;
+    font-family: "Roboto", sans-serif;
+}
+
+.section-2 > h1 {
+    font-weight: 400;
+}
+
+.section-3 {
+    display: flex;
+}
+
+.quote-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote {
+    margin: 0;
+    padding: 0px 50px;
+    color: #91AFFF;
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    font-size: 55px;
+    font-weight: 300;
+}
+
+.slogan {
+
+}
+
+h5 {
+    align-self: flex-end;
+    margin: 0;
+    margin-top: 10px;
+    color: #91AFFF;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.red-button {
+    margin: 20px;
+    background-color: #FF1053;
+    border-radius: 20px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-size: 35px;
+    text-decoration: none;
+    transition: all linear 250ms;
+    font-weight: 500;
+}
+
+.red-button:hover {
+    background-color: #be0e45;
+}
+
+.green-button {
+    margin: 20px;
+    background-color: #73C1C6;
+    border-radius: 20px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-size: 35px;
+    text-decoration: none;
+    transition: all linear 250ms;
+    font-weight: 500;
+}
+
+.green-button:hover {
+    background-color: #45858a;
+}
+
+.blank-space {
     width: 100%;
+    height: 600px;
 }

@@ -1,0 +1,30 @@
+.expert-line-container {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+	transition: all ease-in-out 100ms;
+	margin: 50px 0;
+}
+
+.expert-line-container::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
+	margin: 0 0 0 20px;
+}
+
+.expert-line-container::-webkit-scrollbar
+{
+	width: 8px;
+    height: 8px;
+	background-color: #F5F5F5;
+}
+
+.expert-line-container::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #a0a0a0;
+}
+
+.expert-line-active {
+	cursor: grabbing;
+}
