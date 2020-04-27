@@ -3,7 +3,7 @@
     overflow: auto;
     white-space: nowrap;
 	transition: all ease-in-out 100ms;
-	margin: 50px 0;
+	margin: 20px 0 50px 0;
 }
 
 .expert-line-container::-webkit-scrollbar-track {
@@ -27,4 +27,12 @@
 
 .expert-line-active {
 	cursor: grabbing;
+}
+
+.expert-line-title {
+    color: #91AFFF;
+    font-size: 5vmin;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+	margin: 30px 0 0 50px;
 }

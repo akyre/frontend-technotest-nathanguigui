@@ -7,6 +7,7 @@ import NotFoundPage from "../routes/notfound";
 import Header from "./header";
 import Calendar from "../routes/calendar";
 import ExpertList from "../routes/expertList";
+import Message from "../routes/message";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 if ((module as any).hot) {
@@ -30,6 +31,7 @@ const App: FunctionalComponent = () => {
                 <Route path="/" component={Home} />
                 <Route path="/calendar/" component={Calendar} />
                 <Route path="/experts/" component={ExpertList} />
+                <Route path="/message/" component={Message} />
                 <NotFoundPage default />
             </Router>
         </div>

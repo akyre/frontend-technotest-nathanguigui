@@ -1,0 +1,75 @@
+.conversation {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conversation-name {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.conversation-message {
+
+}
+
+.conversation-bottom {
+    display: flex;
+    padding: 20px;
+    background-color: #91AFFF;
+    justify-content: space-between;
+}
+
+.conversation-input {
+    height: 50px;
+    padding-left: 10px;
+    outline: none;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    border: none;
+    color: #a1a1a1;
+    font-size: 26px;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.conversation-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conversation-top {
+    height: 100%;
+    padding: 30px;
+}
+
+.conversation-round {
+    height: 50px;
+    width: 50px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.conversation-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #91AFFF;
+    border-radius: 5px;
+}

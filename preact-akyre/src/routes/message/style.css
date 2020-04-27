@@ -1,0 +1,12 @@
+.messages {
+    display: flex;
+    height: 100%;
+}
+
+.messages-contact {
+    flex: 1 1 0px
+}
+
+.messages-message {
+    flex: 3 1 0px
+}

@@ -1,0 +1,42 @@
+.message-content-container {
+    display: flex;
+    margin-top: 50px;
+    /*align-items: center;*/
+}
+
+.message-content {
+    flex: 4 1 0px;
+    font-family: "Roboto", sans-serif;
+    font-size: 2vmin;
+    font-weight: 300;
+}
+
+.message-image {
+    flex: 1 1 0px;
+    margin: 0 10px
+}
+
+.message-image > img {
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid #FFE27B;
+}
+
+.message-blank {
+    flex: 1 1 0px;
+}
+
+.message-content-content {
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+    padding: 20px 40px;
+    margin: 10px 0 0 0;
+}
+
+.message-time {
+    margin: 5px 10px;
+    font-size: small;
+    min-height: 10px;
+}

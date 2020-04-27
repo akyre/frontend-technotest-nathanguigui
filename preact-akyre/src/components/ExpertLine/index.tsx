@@ -1,4 +1,4 @@
-import {FunctionalComponent, h} from "preact";
+import {FunctionalComponent, h, Fragment} from "preact";
 import {Expert} from "../../routes/expertList";
 import ExpertComponent from "../ExpertComponent";
 import * as Style from "./style.css";
@@ -59,18 +59,21 @@ const ExpertLine: FunctionalComponent<ExpertLineProps> = (props: ExpertLineProps
     }
 
     return (
-        <div style={isScrolling ? {
-            cursor: "grabbing",
-            transform: "scale(1.02)"
-        } : detectMob() ? {scrollSnapType: "x mandatory"} : undefined}
-             ref={ref => sliderRef.current = ref} class={Style.expertLineContainer}
-             onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseMove={onMouseMove} onScroll={onScroll}>
-            <div style={{display: "flex", paddingLeft: "30px"}}>
-                {props.experts.map((expert) =>
-                    <ExpertComponent expert={expert}/>
-                )}
+        <Fragment>
+            <div class={Style.expertLineTitle}>{props.category_title}</div>
+            <div style={isScrolling ? {
+                cursor: "grabbing",
+                transform: "scale(1.02)"
+            } : detectMob() ? {scrollSnapType: "x mandatory"} : undefined}
+                 ref={ref => sliderRef.current = ref} class={Style.expertLineContainer}
+                 onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseMove={onMouseMove} onScroll={onScroll}>
+                <div style={{display: "flex", paddingLeft: "30px"}}>
+                    {props.experts.map((expert) =>
+                        <ExpertComponent expert={expert}/>
+                    )}
+                </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
 
