@@ -20,13 +20,20 @@ interface MessageConversationProps {
 const MessageConversation: FunctionalComponent<MessageConversationProps> = (props) => {
     return (
         <div class={Style.conversation}>
-            <div class={Style.conversationTop}>
-                <div class={Style.conversationName}>{props.display_name}</div>
-                <div class={Style.conversationMessage}>
-                    {props.conversation && props.conversation.messages?.map((messages: Message) =>
-                        <MessageContent content={messages}/>
-                    )}
-                </div>
+            <div class={Style.conversationName}>{props.display_name}</div>
+            <div class={Style.conversationMessage}>
+                {props.conversation && props.conversation.messages?.map((messages: Message) =>
+                    <MessageContent content={messages}/>
+                )}
+                {/*<MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>
+                <MessageContent content={props?.conversation?.messages[0]}/>*/}
             </div>
             <div class={Style.conversationBottom}>
                 <input class={Style.conversationInput} placeholder={"Ecrivez-votre message…"}/>

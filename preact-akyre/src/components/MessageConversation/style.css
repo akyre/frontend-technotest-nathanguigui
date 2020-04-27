@@ -10,11 +10,34 @@
     font-weight: bold;
     color: black;
     font-size: 40px;
-    padding-bottom: 20px;
+    padding: 30px 30px 50px 30px;
+    flex: 1 1 0px;
 }
 
 .conversation-message {
+    overflow-x: auto;
+    height: 30%;
+    flex: 12 1 0px;
+    padding: 30px;
 
+}
+
+.conversation-message::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.conversation-message::-webkit-scrollbar
+{
+	width: 8px;
+    height: 8px;
+	background-color: #F5F5F5;
+}
+
+.conversation-message::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #a0a0a0;
 }
 
 .conversation-bottom {
@@ -22,6 +45,7 @@
     padding: 20px;
     background-color: #91AFFF;
     justify-content: space-between;
+    flex: 1 1 0px;
 }
 
 .conversation-input {
